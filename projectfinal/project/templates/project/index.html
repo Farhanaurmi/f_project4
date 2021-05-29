@@ -1,0 +1,192 @@
+{% extends 'project/nevbar.html' %}
+
+{% block contact %}
+{% load static %}
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+ <link rel="shortcut icon" type="image/png" href="{% static 'project/img/favicon.png' %}">
+
+  <meta name="robots" content="noindex, nofollow">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+  <!-- Favicons -->
+
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link  href="{% static 'project/css/bootstrap.min.css' %}" rel="stylesheet">
+   <link  href="{% static 'project/css/bootstrap-icons.css' %}" rel="stylesheet">
+   <link  href="{% static 'project/css/boxicons.min.css' %}" rel="stylesheet">
+   <link  href="{% static 'project/css/glightbox.min.css' %}" rel="stylesheet">
+   <link  href="{% static 'project/css/swiper-bundle.min.css' %}" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+   <link  href="{% static 'project/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Baker - v4.1.0
+  * Template URL: https://bootstrapmade.com/baker-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header-transparent">
+
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container position-relative">
+      <h1>Welcome To DMR Academy</h1>
+      <h2>
+Working with me shows you that nothing is impossible
+Do not miss the opportunity and start registering now</h2>
+      <a href="/loginuser" class="btn-get-started scrollto">Get Started</a>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients section-bg">
+      <div class="container">
+
+        <!-- ممكن نحط صور الكورسات-->
+      </div>
+    </section><!-- End Clients Section -->
+
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="{% static 'project/img/onl.png' %}" class="img-fluid" alt="" height="683px" width="1024px">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <h3>About our courses </h3>
+            <p> If you’ve ever felt like learning programming,
+              this is a good course for you to start with.
+              Watch this course before you embark on a journey to learn any new programming
+              language as a beginner.
+            </p>
+            <div class="row">
+              <div class="col-md-6">
+               <img src="{% static 'project/img/stairs.png' %}"  height="30px"  width="30px">
+                <h4>Learn anything</h4>
+                <p>Whether you want to develop as a professional or discover a new hobby,
+                  there's an online course for that. You can even take your learning further with online
+                  programs and degrees.</p>
+              </div>
+              <div class="col-md-6">
+                <img src="{% static 'project/img/chat.png' %}" height="30px"  width="30px">
+                <h4>Learn together</h4>
+                <p>Join millions of people from around the
+                  world learning together. Online learning is as easy and natural as chatting with a group of friends.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts section-bg">
+      <div class="container" >
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="{{ users }}" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Clients</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="{{ courses }}" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Projects</p>
+          </div>
+
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Hard Workers</p>
+          </div>
+
+           <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Hours Of Support</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container">
+
+        <div class="text-center">
+          <h3> Join our team!</h3>
+          <p> We have designed all of our online courses to help you develop your skills anytime and anywhere
+Register today and join the course that suits your interests, whether functional or general.</p>
+          <a class="cta-btn" href="/contact/">JOIN US NOW</a>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+  </main><!-- End #main -->
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'project/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'project/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'project/js/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'project/js/validate.js' %}"></script>
+  <script src="{% static 'project/js/purecounter.js' %}"></script>
+  <script src="{% static 'project/js/swiper-bundle.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js '%} "></script>
+
+  <script>if( window.self == window.top ) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-55234356-4', 'auto'); ga('send', 'pageview'); } </script>
+
+<script type="text/javascript">
+    (function(d, m){
+        var kommunicateSettings =
+            {"appId":"24cb63ba70b800f8595d4d96264ca03e6","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+</script>
+</body>
+
+</html>
+
+{% endblock contact %}

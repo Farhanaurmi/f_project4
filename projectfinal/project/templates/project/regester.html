@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+{% extends 'project/nevbar.html' %}
+{% block contact %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+  <!-- Favicons -->
+  <link href="{% static 'project/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'project/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link  href="{% static 'project/css/bootstrap.min.css' %}" rel="stylesheet">
+   <link  href="{% static 'project/css/bootstrap-icons.css' %}" rel="stylesheet">
+   <link  href="{% static 'project/css/boxicons.min.css' %}" rel="stylesheet">
+   <link  href="{% static 'project/css/glightbox.min.css' %}" rel="stylesheet">
+   <link  href="{% static 'project/css/swiper-bundle.min.css' %}" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+   <link  href="{% static 'project/css/style.css' %}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>register</title>
+     <link  href="{% static 'project/css/log.css' %}" rel="stylesheet">
+     <script src="{% static 'project/js/log.js' %}"></script>
+</head>
+
+
+<body>
+<section class="ftco-section">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6 text-center mb-5">
+
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-md-12 col-lg-10">
+<div class="wrap d-md-flex">
+<div class="img" >
+  <img src="{% static 'project/img/pro.png' %}" width="1000px">
+</div>
+<div class="login-wrap p-4 p-md-5">
+<div class="d-flex">
+<div class="w-100">
+
+</div>
+<div class="w-100">
+<p class="social-media d-flex justify-content-end">
+<a href="#" class="social-icon d-flex align-items-center justify-content-center"><img src="{% static 'project/img/facebook.svg' %}"></a>
+<a href="#" class="social-icon d-flex align-items-center justify-content-center"><img src="{% static 'project/img/instagram.svg' %}"></a>
+</p>
+</div>
+</div>
+    <form id="regester-form" name="regester-form" action="/regester/" method="POST" class="php-email-form" required>
+                        {% csrf_token %}
+
+                        <div class="row">
+
+
+                            <h3 style="text-align: center">Register</h3>
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+
+                                    <input type="text" id="name" name="name" class="form-control" required />
+                                    <label for="name" class="">name</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="md-form mb-0">
+
+                                    <input type="text" id="email" name="email" class="form-control" required />
+                                    <label for="email" class="">email</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="md-form mb-0">
+
+                                    <input type="password" id="password" name="password" class="form-control" required>
+                                    <label for="password" class="">password</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="row">
+
+                        </div>
+                        <!--Grid row-->
+
+                          <div class="text-center text-md-left">
+                        <br>
+                        <a class="btn btn-outline-warning" onclick="document.getElementById('regester-form').submit();" required>Send</a>
+                    </div>
+                    </form>
+                 <p class="text-center">A member? <a  href="/login/">Sign in</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+{% endblock contact %}

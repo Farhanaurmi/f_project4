@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% extends 'project/nevbar.html' %}
+{% block contact %}
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.83.1">
+    <title>courses</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/jumbotron/">
+ <link href="{% static 'project/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'project/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link  href="{% static 'project/css/bootstrap.min.css' %}" rel="stylesheet">
+   <link  href="{% static 'project/css/bootstrap-icons.css' %}" rel="stylesheet">
+   <link  href="{% static 'project/css/boxicons.min.css' %}" rel="stylesheet">
+   <link  href="{% static 'project/css/glightbox.min.css' %}" rel="stylesheet">
+   <link  href="{% static 'project/css/swiper-bundle.min.css' %}" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+   <link  href="{% static 'project/css/style.css' %}" rel="stylesheet">
+
+
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#7952b3">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+  </head>
+  <body>
+  <div class="container">
+
+<div class="jumbotron" style="background:  #cccccc
+ ;color:white ;  margin-top: 100px;" >
+  <h1 class="display-4" style="text-align: center">DMR ACADEMY</h1>
+  <p class="lead" style="text-align: center"> Learn how to code or build your skills in programming online to gain a better understanding of how websites and apps are designed and developed.</p>
+  <hr class="my-4"style="text-align:center">
+  <p>Learn new skills, pursue your interests or advance your career with our short online courses.</p>
+  <div class="btn-wrap">
+                <a href="/loginuser" class="btn btn-warning"> SING IN NOW</a>
+              </div>
+</div>
+ </div>
+
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Courses</h2>
+          <p>A series of courses designed to help you specialize your skills.</p>
+        </div>
+
+
+          <div class="row">
+
+
+
+
+        <!-- for database-->
+
+        {% for x in var_1.all %}
+         <div class="col-lg-3 col-md-6 mt-4 mt-lg-0 py-3">
+            <div class="box">
+                
+              <h3>{{x.title}}</h3>
+              <h4><sup>$</sup>{{x.price}}<span> / month</span></h4>
+              <div class="card" style="border: none;">
+                <div class="card-body">
+                
+                  <p class="card-text" style="font-size: medium;">{{ x.body }}</p>
+                
+            
+                </div>
+              </div>
+
+              <div class="btn-wrap">
+                <a href="/buynow" class="btn-buy">Buy Now</a>
+              </div>
+                        
+            </div>
+
+  </div>
+  {% endfor %}
+      </div>
+            </div>
+
+            
+
+</section><!-- End Pricing Section -->
+  </body>
+</html>
+{% endblock contact %}

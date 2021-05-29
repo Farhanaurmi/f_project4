@@ -1,0 +1,343 @@
+{% load static %}
+
+ <html lang="en">
+<head>
+  <title>DMR ACADEMY</title>
+   <link rel="icon" type="image/png" href="{% static 'project/img/RRR.png' %}"  sizes="180x180" >
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .ppp:hover{
+      color: goldenrod;
+    }
+  .f{
+    font-size:50px;
+    }
+    /*** Mixins & Default Styles ***/
+
+
+#logo{
+    color: aliceblue;
+}
+/*** Color Variables ***/
+/*** Centering Hack ***/
+/*** Header Styles ***/
+
+/*** Navigation Styles ***/
+nav {
+    width: 100vw;
+    height: 135px;
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: fixed;
+    z-index: 10;
+    transition: all 0.3s;
+}
+nav.navShadow {
+    box-shadow: 0 4px 30px -5px rgba(252, 252, 252, 0.404);
+    height: 90px;
+}
+nav.navShadow #word-mark {
+    opacity: 0;
+}
+#brand, #menu, .ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+#brand {
+    padding-left: 40px;
+}
+
+/*** Menu Styles ***/
+
+#menu {
+    justify-content: flex-end;
+    padding-right: 40px;
+}
+.li {
+    margin-left: 20px;
+}
+.li a {
+    width: auto;
+    height: 40px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+}
+#menu-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: none;
+}
+#menu-toggle:hover .bar {
+    width: 25px;
+}
+#menu-toggle.closeMenu .bar {
+    width: 25px;
+}
+#menu-toggle.closeMenu .bar:first-child {
+    transform: translateY(7px) rotate(45deg);
+}
+#menu-toggle.closeMenu .bar:nth-child(2) {
+    transform: scale(0);
+}
+#menu-toggle.closeMenu .bar:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+}
+.bar {
+    width: 25px;
+    height: 2px;
+    background: rgb(0, 0, 0);
+    transition: 0.3s ease-in-out;
+}
+.bar:nth-child(2) {
+    width: 20px;
+    margin: 5px 0;
+}
+.bar:last-child {
+    width: 15px;
+}
+
+
+
+/*** Responsive Menu For Smaller Device ***/
+@media screen and (max-width: 767px) {
+    #menu-toggle {
+        display: flex;
+   }
+    .ul {
+        display: inline-block;
+        width: 100vw;
+        height: 0;
+        background: #ffffff;
+        position: absolute;
+        top: 160px;
+        transform: translate();
+        box-shadow: 0 5px 30px -4px rgba(255, 255, 255, 0.2);
+        transition: all 0.3s;
+        margin-right: -9%;
+   }
+    .ul.showMenu {
+        margin-top: -20%;
+        height: 100vh;
+        padding-right: 15%;
+   }
+    .ul.showMenu .li {
+        height: 80px;
+        opacity: 1;
+        visibility: visible;
+   }
+    .li {
+        width: auto;
+        height: 80px;
+        float: center;
+        padding-left: 50%;
+        opacity: 0;
+        visibility: hidden;
+        margin-left: 0;
+        transition: all 0.3s 0.1s;
+        margin-top: 10px;
+   }
+   
+    #head-line {
+        transform: scale(0.8);
+   }
+   .vid{
+       width: 100%;
+   }
+}
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" style="margin-top: 5px;text-decoration: none;"><div id="brand">
+      <div id="logo"><img src="{% static 'project/img/RRR.png' %}" width="60px"></div>
+      <h1 style="color: rgb(70, 70, 70);">&nbsp;DMR ACADEMY</h1>
+    </div></a>
+    <div id="menu">
+      <div id="menu-toggle">
+        <div id="menu-icon">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+      <ul class="ul">
+
+        <li class="li"><a href="/about/">
+         
+          <div style="font-size: large;">About</div>
+            </a>
+        </li>
+
+        <li class="li"><a href="/courses/">
+         
+          <div style="font-size: large;">Courses</div>
+        </a></li>
+
+        <li class="li"><a href="/contact/">
+          
+          <div style="font-size: large;">Contact</div>
+        </a></li>
+
+        <li class="li"><a href="/controlpanel">
+         
+          <div style="font-size: large;">Control Panel</div>
+        </a></li>
+
+              {% if user.is_authenticated %}
+              
+
+
+
+              <li class="li">
+                <form method="POST" action="{% url 'logoutuser' %}">
+                {% csrf_token %}
+            <button type="submit" 
+            style="border: none;
+            outline: none;
+            background: white;"><div class="ppp" style="font-size: large;">Logout</div></button></li>
+              <li class="li">
+                <a href="#"><div style="font-size: large;"><span class="glyphicon glyphicon-user"></span>{{ user.username }}</div></a>
+              </li>
+            {% else %}
+            <li class="li">
+            <a href="/loginuser">
+              
+              <div style="font-size: large;">Login</div></a>
+            </li>
+            <li class="li">
+              <a href="/register">
+                
+                <div style="font-size: large;">Register</div></a>
+              </li>
+            {% endif %}
+          
+      </ul>
+    </div>
+  </nav>
+  
+
+
+    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $( () => {
+	
+	//On Scroll Functionality
+	$(window).scroll( () => {
+		var windowTop = $(window).scrollTop();
+		windowTop > 100 ? $('nav').addClass('navShadow') : $('nav').removeClass('navShadow');
+		windowTop > 100 ? $('ul').css('top','200px') : $('ul').css('top','160px');
+	});
+	
+	//Click Logo To Scroll To Top
+	$('#logo').on('click', () => {
+		$('html,body').animate({
+			scrollTop: 0
+		},500);
+	});
+	
+	//Smooth Scrolling Using Navigation Menu
+	$('a[href*="#"]').on('click', function(e){
+		$('html,body').animate({
+			scrollTop: $($(this).attr('href')).offset().top - 100
+		},500);
+		e.preventDefault();
+	});
+	
+	//Toggle Menu
+	$('#menu-toggle').on('click', () => {
+		$('#menu-toggle').toggleClass('closeMenu');
+		$('ul').toggleClass('showMenu');
+		
+		$('li').on('click', () => {
+			$('ul').removeClass('showMenu');
+			$('#menu-toggle').removeClass('closeMenu');
+		});
+	});
+	
+});
+    </script>
+
+  </body>
+{% block contact %}
+
+{% endblock contact %}
+ <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>DMR ACADEMY</h3>
+            <p>
+            Prince Muqrin bin Abdulaziz University - Female Section <br>
+             King Abdullah Road, Mudhaineb, Medina 42381<br>
+              Madina El Monawara<br><br>
+              <strong>Phone:</strong> +96650333333<br>
+              <strong>Email:</strong> <a href="mailto:DMR.ACADEMIA@edu.sa" class="__cf_email__" data-cfemail="7a13141c153a1f021b170a161f54191517">[DMR.ACADEMIA@edu.sa]</a><br>
+            </p>
+          </div>
+
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><img src="{% static 'project/img/chevron-right.svg' %}"> <a href="/index/">Home</a></li>
+              <li> <img src="{% static 'project/img/chevron-right.svg' %}"><a href="/about/">About us</a></li>
+              <li><img src="{% static 'project/img/chevron-right.svg' %}"> <a href="/contact/">contact</a></li>
+              <li><img src="{% static 'project/img/chevron-right.svg' %}"> <a href="/courses/">Courses</a></li>
+              <li><img src="{% static 'project/img/chevron-right.svg' %}"> <a href="/controlpanel">Control Panel</a></li>
+              <li><img src="{% static 'project/img/chevron-right.svg' %}"> <a href="/loginuser">LOGIN </a></li>
+              <li><img src="{% static 'project/img/chevron-right.svg' %}"> <a href="/register/">REGISTER </a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Online Compiler</h4>
+            <ul>
+              <li><img src="{% static 'project/img/chevron-right.svg' %}"> <a href="csharp">C#</a></li>
+              <li> <img src="{% static 'project/img/chevron-right.svg' %}"><a href="python">Python</a></li>
+              <li><img src="{% static 'project/img/chevron-right.svg' %}"> <a href="java">Java</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>DMR ACADEMY</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/baker-free-onepage-bootstrap-theme/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="https://twitter.com/?lang=ar" class="twitter"><img src="{% static 'project/img/twitter.svg' %}"></a>
+        <a href="https://ar-ar.facebook.com/" class="facebook"><img src="{% static 'project/img/facebook.svg' %}"></a>
+        <a href="https://www.instagram.com/" class="instagram"><img src="{% static 'project/img/instagram.svg' %}"></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+</html>

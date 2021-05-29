@@ -1,0 +1,19 @@
+{% extends 'project/nevbar.html' %}
+{% block contact %}
+{% load static %}
+
+<html lang="en">
+
+
+
+ <form action=" " method="post">
+  {% csrf_token %}
+{{form.as_p}}
+     <input type="submit" name="create user">
+ </form>
+
+
+    </html>
+
+
+{% endblock contact %}
